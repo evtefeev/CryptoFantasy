@@ -83,6 +83,7 @@ function fillCard(card_data, card) {
         card[0].style.backgroundImage = `url('/static/imgs/small-${card_data.image}')`;
         card[0].dataset.bg = `/static/imgs/${card_data.image}`;
         card[0].classList.add('lazy-bg');
+        card[0].classList.add('video-preview');
     }
     card.find('#hero-health')[0].innerText = `${health_text} ${card_data.health}`
     card.find('#hero-attack')[0].innerText = `${attack_text} ${card_data.attack}`
@@ -231,6 +232,7 @@ window.onload = () => {
             my_card_num = parseInt($(this).attr('id').match(/(\d+)$/)[0], 10)
             $(".user_card").css({ border: "1px solid #000" })
             $(this).css({ border: "2px solid #0f0" })
+            enableVideoClick(this)
         }
 
     });

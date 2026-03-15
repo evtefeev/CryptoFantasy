@@ -141,3 +141,28 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+.lazy-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+/* видео как фон */
+.lazy-bg video{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+/* весь контент поверх видео */
+.lazy-bg > * {
+    position: relative;
+    z-index: 1;
+}
